@@ -137,21 +137,21 @@ public class SpotifyRepository {
             throw new Exception("User does not exist");
         }
 
-        List<User> userslist = new ArrayList<>();
+        List<User> usersList = new ArrayList<>();
         if(playlistListenerMap.containsKey(playlist)){
-            userslist=playlistListenerMap.get(playlist);
+            usersList=playlistListenerMap.get(playlist);
         }
-        userslist.add(curUser);
-        playlistListenerMap.put(playlist,userslist);
+        usersList.add(curUser);
+        playlistListenerMap.put(playlist,usersList);
 
         creatorPlaylistMap.put(curUser,playlist);
 
-        List<Playlist>userplaylists = new ArrayList<>();
+        List<Playlist> userPlaylists = new ArrayList<>();
         if(userPlaylistMap.containsKey(curUser)){
-            userplaylists=userPlaylistMap.get(curUser);
+            userPlaylists=userPlaylistMap.get(curUser);
         }
-        userplaylists.add(playlist);
-        userPlaylistMap.put(curUser,userplaylists);
+        userPlaylists.add(playlist);
+        userPlaylistMap.put(curUser,userPlaylists);
 
         return playlist;
     }
@@ -186,21 +186,21 @@ public class SpotifyRepository {
             throw new Exception("User does not exist");
         }
 
-        List<User> userslist = new ArrayList<>();
+        List<User> userList = new ArrayList<>();
         if(playlistListenerMap.containsKey(playlist)){
-            userslist=playlistListenerMap.get(playlist);
+            userList=playlistListenerMap.get(playlist);
         }
-        userslist.add(curUser);
-        playlistListenerMap.put(playlist,userslist);
+        userList.add(curUser);
+        playlistListenerMap.put(playlist,userList);
 
         creatorPlaylistMap.put(curUser,playlist);
 
-        List<Playlist>userplaylists = new ArrayList<>();
+        List<Playlist>userPlaylists = new ArrayList<>();
         if(userPlaylistMap.containsKey(curUser)){
-            userplaylists=userPlaylistMap.get(curUser);
+            userPlaylists=userPlaylistMap.get(curUser);
         }
-        userplaylists.add(playlist);
-        userPlaylistMap.put(curUser,userplaylists);
+        userPlaylists.add(playlist);
+        userPlaylistMap.put(curUser,userPlaylists);
 
         return playlist;
     }
@@ -301,7 +301,8 @@ public class SpotifyRepository {
                 artists.add(artist);
                 return song;
             }
-        }else {
+        }
+        else {
             int likes = song.getLikes() + 1;
             song.setLikes(likes);
             List<User> list = new ArrayList<>();
