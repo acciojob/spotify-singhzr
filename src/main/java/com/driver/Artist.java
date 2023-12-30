@@ -16,10 +16,12 @@ public class Artist {
     }
 
     public String getName() {
+
         return name;
     }
 
     public void setName(String name) {
+
         this.name = name;
     }
 
@@ -28,6 +30,7 @@ public class Artist {
     }
 
     public void setLikes(int likes) {
+
         this.likes = likes;
     }
 }
